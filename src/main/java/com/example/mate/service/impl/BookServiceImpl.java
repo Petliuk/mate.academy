@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.mate.service.impl;
 
-import com.example.model.Book;
-import com.example.repository.BookRepository;
-import com.example.service.BookService;
+import com.example.mate.model.Book;
+import com.example.mate.repository.BookRepository;
+import com.example.mate.service.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.example.service;
+package com.example.mate.service;
 
-import com.example.model.Book;
+import com.example.mate.model.Book;
 import java.util.List;
 
 public interface BookService {
