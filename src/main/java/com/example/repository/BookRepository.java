@@ -1,7 +1,6 @@
-package com.example.mate_academy.repository;
+package com.example.repository;
 
-
-import com.example.mate_academy.model.Book;
+import com.example.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

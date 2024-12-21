@@ -1,4 +1,4 @@
-package com.example.mate_academy;
+package com.example;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
