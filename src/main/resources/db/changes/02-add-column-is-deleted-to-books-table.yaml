@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: add-is-deleted-column
-      author: for_mate
+      author: book-project
       changes:
         - addColumn:
             tableName: books

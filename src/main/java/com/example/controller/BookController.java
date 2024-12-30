@@ -1,15 +1,15 @@
-package com.example.mate.controller;
+package com.example.controller;
 
-import com.example.mate.dto.BookDto;
-import com.example.mate.dto.CreateBookRequestDto;
-import com.example.mate.service.BookService;
+import com.example.dto.BookDto;
+import com.example.dto.CreateBookRequestDto;
+import com.example.service.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -27,7 +27,7 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public BookDto getBookById(@PathVariable Long id) {
         return bookService.getBookById(id);
     }
@@ -39,7 +39,7 @@ public class BookController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id}")
+    @PutMapping("/{id}")
     public void delete(@PathVariable Long id) {
         bookService.deleteById(id);
     }

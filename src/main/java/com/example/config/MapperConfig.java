@@ -1,4 +1,4 @@
-package com.example.mate.config;
+package com.example.config;
 
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.NullValueCheckStrategy;

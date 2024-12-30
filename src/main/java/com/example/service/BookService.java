@@ -1,7 +1,7 @@
-package com.example.mate.service;
+package com.example.service;
 
-import com.example.mate.dto.BookDto;
-import com.example.mate.dto.CreateBookRequestDto;
+import com.example.dto.BookDto;
+import com.example.dto.CreateBookRequestDto;
 import java.util.List;
 
 public interface BookService {

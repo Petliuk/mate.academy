@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-book-table
-      author: for_mate
+      author: book-project
       changes:
         - createTable:
             tableName: books
