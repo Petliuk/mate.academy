@@ -6,6 +6,7 @@ import com.example.mate.service.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,7 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public BookDto getBookById(@PathVariable Long id) {
         return bookService.getBookById(id);
     }
@@ -34,5 +36,11 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     public BookDto createBook(@RequestBody CreateBookRequestDto bookDto) {
         return bookService.createBook(bookDto);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        bookService.deleteById(id);
     }
 }
