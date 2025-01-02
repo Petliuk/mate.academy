@@ -40,3 +40,6 @@ databaseChangeLog:
               - column:
                   name: cover_image
                   type: varchar(255)
+      rollback:
+        - dropTable:
+            tableName: books

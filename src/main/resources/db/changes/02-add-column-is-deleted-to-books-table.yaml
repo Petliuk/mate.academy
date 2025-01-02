@@ -12,3 +12,7 @@ databaseChangeLog:
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
+      rollback:
+        - dropColumn:
+            tableName: books
+            columnName: is_deleted
