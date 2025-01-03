@@ -1,12 +1,12 @@
-package com.example.mate.service.impl;
+package com.example.service.impl;
 
-import com.example.mate.dto.BookDto;
-import com.example.mate.dto.CreateBookRequestDto;
-import com.example.mate.exception.EntityNotFoundException;
-import com.example.mate.mapper.BookMapper;
-import com.example.mate.model.Book;
-import com.example.mate.repository.BookRepository;
-import com.example.mate.service.BookService;
+import com.example.dto.BookDto;
+import com.example.dto.CreateBookRequestDto;
+import com.example.exception.EntityNotFoundException;
+import com.example.mapper.BookMapper;
+import com.example.model.Book;
+import com.example.repository.BookRepository;
+import com.example.service.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,5 +38,18 @@ public class BookServiceImpl implements BookService {
     public BookDto createBook(CreateBookRequestDto requestDto) {
         Book book = bookMapper.toEntity(requestDto);
         return bookMapper.toDto(bookRepository.save(book));
+    }
+
+    @Override
+    public BookDto updateBook(Long id, CreateBookRequestDto bookDto) {
+        Book book = bookRepository.findById(id).orElseThrow(
+                () -> new EntityNotFoundException("Cant find book by id " + id)
+        );
+        return bookMapper.toDto(bookRepository.save(book));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        bookRepository.deleteById(id);
     }
 }
