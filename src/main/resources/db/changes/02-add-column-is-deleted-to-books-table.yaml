@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-is-deleted-column
+      author: book-project
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: is_deleted
+                  type: bit
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+      rollback:
+        - dropColumn:
+            tableName: books
+            columnName: is_deleted
